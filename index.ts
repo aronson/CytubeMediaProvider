@@ -10,7 +10,7 @@ app.get("/", (_request: any, response: { send: (arg0: string) => void }) => {
     response.send("Hello world!");
 });
 
-app.listen({ port: PORT };
+app.listen({ port: PORT });
 
 console.log({
     message: `Server ready at http://localhost:${PORT}/`,

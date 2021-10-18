@@ -6,10 +6,10 @@
   "author": "Isaac Aronson",
   "license": "MIT",
   "scripts": {
-    "build:artifact": "docker build -f Dockerfile ../.. -t echo.tms.graphql",
+    "build:artifact": "docker build -f Dockerfile ../.. -t cytube-media-provider",
     "build:prod": "npx tsc",
     "start": "nodemon ./index.ts",
-    "start:artifact": "docker run -p 4000:80 echo.tms.graphql",
+    "start:artifact": "docker run -p 4000:80 cytube-media-provider",
     "test": "jest --silent",
     "test:ci": "jest --silent",
     "lint": "eslint --ext .js,.ts --ignore-path .gitignore .",
