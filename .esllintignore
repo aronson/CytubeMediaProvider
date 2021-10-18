@@ -1,0 +1,8 @@
+*.scss
+*.jpg
+*.png
+setupTests.ts
+**/dist/**/*
+**/build/**/*
+**/*.tsx.snap
+node_modules

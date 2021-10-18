@@ -6,17 +6,31 @@
   "author": "Isaac Aronson",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "start": "node ./bin/server.js",
-    "dev": "ts-node ./src/server.ts"
+    "build:artifact": "docker build -f Dockerfile ../.. -t echo.tms.graphql",
+    "build:prod": "npx tsc",
+    "start": "nodemon ./index.ts",
+    "start:artifact": "docker run -p 4000:80 echo.tms.graphql",
+    "test": "jest --silent",
+    "test:ci": "jest --silent",
+    "lint": "eslint --ext .js,.ts --ignore-path .gitignore .",
+    "lint-fix": "eslint --fix --ext .js,.ts --ignore-path .gitignore ."
   },
   "dependencies": {
     "@types/express": "^4.17.13",
     "@types/node": "^16.11.1",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "typescript": "^4.4.4"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin": "^1.0.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.13",
+    "prettier": "^2.4.1",
     "ts-node": "^10.3.0"
   }
 }
