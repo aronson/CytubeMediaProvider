@@ -6,7 +6,7 @@
   "author": "Isaac Aronson",
   "license": "MIT",
   "scripts": {
-    "build:artifact": "docker build -f Dockerfile ../.. -t cytube-media-provider",
+    "build:artifact": "docker build -f Dockerfile . -t cytube-media-provider",
     "build:prod": "npx tsc",
     "start": "nodemon ./index.ts",
     "start:artifact": "docker run -p 4000:80 cytube-media-provider",
